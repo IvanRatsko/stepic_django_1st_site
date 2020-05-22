@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+from django.http import HttpResponseNotFound
 
 # Create your views here.
 title = "Stepik Travel"
@@ -264,3 +265,11 @@ class DepartureView(View):
 class TourView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'tours/tour.html')
+
+
+def custom_handler404(request, exception):
+    return HttpResponseNotFound('Ошибка 404')
+
+
+def custom_handler500(request):
+    return HttpResponseNotFound('Ошибка 500')

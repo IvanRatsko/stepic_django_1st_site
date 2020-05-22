@@ -18,7 +18,8 @@ from django.urls import path
 from tours.views import MainView
 from tours.views import DepartureView
 from tours.views import TourView
-
+from tours.views import custom_handler404
+from tours.views import custom_handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,3 +30,6 @@ urlpatterns = [
     path('tour/<int:id>/', TourView.as_view()),
 
 ]
+
+handler404 = custom_handler404
+handler500 = custom_handler500
