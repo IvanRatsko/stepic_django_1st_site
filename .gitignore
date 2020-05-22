@@ -1,7 +1,7 @@
 /venv/
 .idea
 .gitignore
-README.md
+
 
 # User-specific stuff
 .idea/**/workspace.xml
